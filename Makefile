@@ -17,3 +17,8 @@ build-docker:
 	@echo "Building Docker image..."
 	docker build -t test/helloworld .
 	@echo "Docker image built and tagged as test/helloworld."
+
+run-docker:
+	@echo "Running Docker container..."
+	docker run --rm -it -p 7010:7010 test/helloworld
+	@echo "Docker container stopped."
