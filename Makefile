@@ -20,5 +20,5 @@ build-docker:
 
 run-docker:
 	@echo "Running Docker container..."
-	docker run --rm -it -p 7010:7010 test/helloworld
+	docker run --rm -it -p 7010:7010 -p 7011:7010 test/helloworld
 	@echo "Docker container stopped."
