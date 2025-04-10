@@ -1,0 +1,35 @@
+# Ignore Python bytecode files
+__pycache__/
+*.py[cod]
+
+# Ignore virtual environment folders
+venv/
+.env/
+
+# Ignore Docker-related files
+*.log
+docker-compose.override.yml
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore build artifacts
+build/
+dist/
+*.egg-info/
+
+# Ignore editor-specific files
+.idea/
+.vscode/
+*.swp
+
+# Ignore Makefile artifacts
+*.o
+*.out
+
+# Ignore other temporary files
+*.tmp
+*.bak
+*.old
+*.swp
+*.swo
