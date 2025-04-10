@@ -22,6 +22,8 @@ RUN chmod +x /app/runner
 
 # Expose port 7010
 EXPOSE 7010
+# Expose port 7011
+EXPOSE 7011
 
 # Use the runner script as the entry point
 CMD ["/app/runner"]

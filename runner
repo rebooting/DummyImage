@@ -1,3 +1,4 @@
 #!/bin/sh
 
-cd /app && python3 -m http.server 7010
+cd /app && python3 -m http.server 7010 &
+cd /app && python3 -m http.server 7011 
