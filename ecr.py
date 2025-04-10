@@ -11,7 +11,17 @@ image_tag = "latest"  # Replace with your desired image tag
 # Step 1: Authenticate with ECR
 ecr_client = boto3.client("ecr", region_name=region)
 
+
+def ensure_ecr_repository():
+    try:
+        ecr_client.describe_repositories(repositoryNames=[repository_name])
+        print(f"ECR repository '{repository_name}' already exists.")
+    except ecr_client.exceptions.RepositoryNotFoundException:
+        ecr_client.create_repository(repositoryName=repository_name)
+        print(f"ECR repository '{repository_name}' has been created.")
+
 def create_ecr():
+    ensure_ecr_repository()
     # Step 1: Authenticate with ECR
     auth_token = ecr_client.get_authorization_token()
     username, password = base64.b64decode(auth_token["authorizationData"][0]["authorizationToken"]).decode().split(":")
